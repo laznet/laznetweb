@@ -1,8 +1,8 @@
-os: 'linux'
+os: "linux"
 
 language: python
 
-dist: 'xenial'
+dist: "xenial"
 python: "3.9"
 
 install:
@@ -20,5 +20,5 @@ deploy:
   token: $GITHUB_TOKEN
   edge: true
   on:
-    branch: main
+    branch: master
 
