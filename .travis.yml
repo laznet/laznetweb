@@ -1,0 +1,24 @@
+os: "linux"
+
+language: python
+
+dist: "xenial"
+python: "3.9"
+
+install:
+    - pip install pipenv
+    - pipenv install
+
+script: pipenv run pelican -s publishconf.py 
+
+deploy:
+  provide: pages
+  strategy: git
+  repo: laznet/laznetweb
+  target_branch: online
+  local_dir: output
+  token: $GITHUB_TOKEN
+  edge: true
+  on:
+    branch: main
+
